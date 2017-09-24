@@ -1,0 +1,618 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "../common/basemodels",
+      "../common/apimodels",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "redishelper": {
+    "dataSource": "db",
+    "public": false
+  },
+  "dbhelper": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "basemodel": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "smshelper": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "channel": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "User": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Statistical": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TModule": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TModuletype": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TRolemodule": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TRole": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TUser": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TUserrole": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TMember": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TProd": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TImgs": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TNews": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TWechatcallback": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TMembill": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TBillcomment": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TSmsmessage": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "RecGetintgoods": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntbirdouble": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecActiveDetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDowngetintgoods": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipsavesale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptgoodsreport": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownbirpresent": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntegraladd": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveCashersale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecActiveDeptinfo": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecViploss": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptselfgoods": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveViploss": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownGoods": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipback": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSavegive": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocSmsid": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveSaledetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecCashersale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSmsHistory": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecActiveMain": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecGoodschoosed": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecClientindent": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecGoodsreport": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveVip": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecViprndsalemoney": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecEmpchgpwd": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipmodify": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptselfclass": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveVipback": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownActivedetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownvip": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveSaledetailSetmeal": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntactiveMain": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecMenupower": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocClientpaytype": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntactiveDetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocCompanyaccount": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecOperatelog": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntactiveDeptinfo": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecInfodept": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSaledetailSetmeal": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocPinyin": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceivePayfordetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecMaterial": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocClass": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSaledetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownemp": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecClientindentMain": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDowninfo": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecInfosend": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecLockeddept": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocSupply": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecTmpdeptno": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocDepartment": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocArea": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownDept": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptstore": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownIntactivedetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecTmpparm": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocClient": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipchglevel": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownClass": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipbirgivehistory": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveVipchglevel": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownGoodsproject": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipexphistory": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSetmeal": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownlevel": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Pbcattbl": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecFullgive": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Pbcatcol": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownSetmeal": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Pbcatfmt": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Pbcatvld": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecPayfordetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Pbcatedt": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownPayfor": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "CheckCashersale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptgoods": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocMatcls": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownfullgive": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptpayfordetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocRole": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecGetintegral": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "CheckSaledetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecMenu": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocViplevel": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecEmpwinstate": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocCompanyinfo": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownsysparm": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptsale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownbuygive": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Sysparm": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocViptype": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocPayfor": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownsavegive": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptcheck": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "CheckPayfordetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownparm": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipexp": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Jgzc": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocFormnocreate": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecGoodsproject": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptmatused": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecGoodsformula": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptgoodsreturn": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownvipexp": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownActivemain": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownintegraladd": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecProjformula": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownIntactivemain": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownProject": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecProjectreport": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecViptimedisc": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDownIntbirdouble": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDeptclass": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecProjectsaledetail": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecDowntimedisc": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "Dtproperties": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "CheckVipsavesale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSpda": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "DocEmployee": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVipchgcard": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecSalemoney": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecStorequantity": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecIntbirdoubleDeptinfo": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "ReceiveVipsavesale": {
+    "dataSource": "mssql",
+    "public": true
+  },
+  "RecVip": {
+    "dataSource": "mssql",
+    "public": true
+  }
+}

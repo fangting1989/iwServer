@@ -1,0 +1,31 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": "3306",
+    "database": "fsbase",
+    "username": "root",
+    "password": "123456",
+    "name": "mysql",
+    "connector": "mysql"
+  },
+  "newDatasource": {
+    "password": "123456",
+    "name": "newDatasource",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "mssql": {
+    "host": "localhost",
+    "port": 1433,
+    "url": "mssql://MILKTEA_MAIN:MILKTEA_MAIN@localhost/MILKTEA_MAIN",
+    "database": "MILKTEA_MAIN",
+    "password": "MILKTEA_MAIN",
+    "name": "mssql",
+    "user": "MILKTEA_MAIN",
+    "connector": "mssql"
+  }
+}

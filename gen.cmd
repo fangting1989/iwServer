@@ -1,0 +1,1 @@
+lb-ng -m baseApiServices -u http://localhost:3000/api server/server.js ../iwclient/lib/api/base-api-services.js

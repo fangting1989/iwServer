@@ -1,0 +1,338 @@
+{
+  "name": "Pbcatcol",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mssql": {
+    "schema": "dbo",
+    "table": "pbcatcol"
+  },
+  "properties": {
+    "pbcTnam": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_tnam",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcTid": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_tid",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcOwnr": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_ownr",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcCnam": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_cnam",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcCid": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_cid",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcLabl": {
+      "type": "String",
+      "required": false,
+      "length": 254,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_labl",
+        "dataType": "varchar",
+        "dataLength": 254,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcLpos": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_lpos",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcHdr": {
+      "type": "String",
+      "required": false,
+      "length": 254,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_hdr",
+        "dataType": "varchar",
+        "dataLength": 254,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcHpos": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_hpos",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcJtfy": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_jtfy",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcMask": {
+      "type": "String",
+      "required": false,
+      "length": 31,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_mask",
+        "dataType": "varchar",
+        "dataLength": 31,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcCase": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_case",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcHght": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_hght",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcWdth": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pbc_wdth",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcPtrn": {
+      "type": "String",
+      "required": false,
+      "length": 31,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_ptrn",
+        "dataType": "varchar",
+        "dataLength": 31,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcBmap": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_bmap",
+        "dataType": "char",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcInit": {
+      "type": "String",
+      "required": false,
+      "length": 254,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_init",
+        "dataType": "varchar",
+        "dataLength": 254,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcCmnt": {
+      "type": "String",
+      "required": false,
+      "length": 254,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_cmnt",
+        "dataType": "varchar",
+        "dataLength": 254,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcEdit": {
+      "type": "String",
+      "required": false,
+      "length": 31,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_edit",
+        "dataType": "varchar",
+        "dataLength": 31,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "pbcTag": {
+      "type": "String",
+      "required": false,
+      "length": 254,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "pbc_tag",
+        "dataType": "varchar",
+        "dataLength": 254,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
