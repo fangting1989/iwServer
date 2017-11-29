@@ -28,7 +28,7 @@ module.exports = function(Recclientindentmain) {
                     formdate:moment(),
                     formno:fomcode,
                     clientcode:Data.clientcode,
-                    formstate:1,
+                    formstate:2,
                     createdate:moment(),
                     paycode:'01'
                 }
@@ -101,6 +101,192 @@ module.exports = function(Recclientindentmain) {
                 });
             })
         })
+    }
+
+
+
+    Recclientindentmain.remoteMethod(
+        'OrderTotalCountMoney',
+        {
+            http: { verb: 'post' },
+            description: '请求列表',
+            accepts: { arg: 'data', type: 'object', description: '{formno:"SF1709040003"}', root: true },
+            returns: { arg: 'data', type: 'object', root: true }
+        }
+    );
+
+    Recclientindentmain.OrderTotalCountMoney = function (Data, cb) { 
+        //获得当前订单详细情况 
+       var sql = "SELECT COUNT(*) AS PROCOUNT,SUM(SALEAMOUNT) AS TOTALMONEY,SUM(quantity) as TOTALQUANTITY FROM REC_CLIENTINDENT WHERE FORMNO = '" +Data.formno+ "'";
+        Recclientindentmain.dataSource.connector.execute(sql, null,function(err,data){
+        if(err){
+            cb(null,{errid:"-100",errmsg:err})
+        }
+        else{
+        if(data.length <= 0){
+            cb(null,{errid:"-100",errmsg:"找不到数据"})
+        }
+        else{
+            cb(null,{errid:1,errmsg:'成功',data:data[0]})
+        }
+       }
+     });
+    }
+
+    //部分收货
+    Recclientindentmain.remoteMethod(
+        'PartPro',
+        {
+            http: { verb: 'post' },
+            description: '部分收货',
+            accepts: { arg: 'data', type: 'object', description: '{"formno": "SF1709200003","list": [{"clscode": "001","mtcode": "0034","barcode": "","mtname": "黄金珍珠","spec": "1箱=20包","stockunit": "包","storeunit": "包","formulaunit": "克","selnum": 3}]}', root: true },
+            returns: { arg: 'data', type: 'object', root: true }
+        }
+    );
+
+    Recclientindentmain.PartPro = function (Data, cb) {  
+        var retData = {}
+        Recclientindentmain.beginTransaction('READ COMMITTED', function(err, tx) {
+            var postData  = {
+                where:{
+                    and:[{formno:Data.formno}]
+                }
+            }
+            var MainModel = {
+                formstate:6
+            }
+            Recclientindentmain.upsertWithWhere(postData.where,MainModel, {transaction: tx}, function(err, inst) {
+                if(err){
+                    tx.rollback(function(err) {
+                        cb(null,{errid:-1,errmsg:err})
+                    });
+                    return
+                }
+                retData.data = inst;
+                //查询所有项数据
+                var filter = {
+                    where:{
+                        and:[{formno:Data.formno}]
+                    }
+                }
+                var PromiseArray = [];
+                console.log(Data.list)
+                _.each(Data.list,function(item){
+                    var updatewhere = {
+                        where:{
+                            and:[{formno:item.formno},{mtcode:item.mtcode}]
+                        }
+                    }
+                    var RecClientindentModal = {
+                        sendquantity:item.selnum
+                    }
+                    PromiseArray.push(Recclientindentmain.app.models.RecClientindent.upsertWithWhere(updatewhere.where,RecClientindentModal, {transaction: tx}))
+                })
+                Promise.all(PromiseArray).then(function(ret){
+                    retData.data.list = ret;
+                    var flag = true;
+                    _.each(ret,function(it){
+                        console.log(it)
+                        if(!it){
+                            flag = false;
+                            tx.rollback(function(err) {
+                                cb(null,{errid:-100,errmsg:err})
+                            });
+                        }
+                    })
+                    if(flag){
+                        tx.commit(function(err) {
+                            cb(null,{errid:1,errmsg:err,data:retData.data})
+                        });
+                    }
+                }).catch(function(caterr){
+                    tx.rollback(function(err) {
+                            cb(null,{errid:1,errmsg:caterr})
+                    });
+                    
+                })  
+                
+            })
+        });
+    }
+
+    //全部收货
+    Recclientindentmain.remoteMethod(
+        'AllPro',
+        {
+            http: { verb: 'post' },
+            description: '全部收货',
+            accepts: { arg: 'data', type: 'object', description: '{"formno": "SF1709200003"}', root: true },
+            returns: { arg: 'data', type: 'object', root: true }
+        }
+    );
+
+    Recclientindentmain.AllPro = function (Data, cb) {  
+        var retData = {}
+        Recclientindentmain.beginTransaction('READ COMMITTED', function(err, tx) {
+            var postData  = {
+                where:{
+                    and:[{formno:Data.formno}]
+                }
+            }
+            var MainModel = {
+                formstate:7
+            }
+            Recclientindentmain.upsertWithWhere(postData.where,MainModel, {transaction: tx}, function(err, inst) {
+                if(err){
+                    tx.rollback(function(err) {
+                        cb(null,{errid:-1,errmsg:err})
+                    });
+                    return
+                }
+                retData.data = inst;
+                //查询所有项数据
+                var filter = {
+                    where:{
+                        and:[{formno:Data.formno}]
+                    }
+                }
+                Recclientindentmain.app.models.RecClientindent.find(filter).then(function(listdata,err){
+                    var PromiseArray = [];
+                    console.log(listdata)
+                    _.each(listdata,function(item){
+                        var updatewhere = {
+                            where:{
+                                and:[{formno:item.formno},{mtcode:item.mtcode}]
+                            }
+                        }
+                        var RecClientindentModal = {
+                            sendquantity:item.quantity
+                        }
+                        PromiseArray.push(Recclientindentmain.app.models.RecClientindent.upsertWithWhere(updatewhere.where,RecClientindentModal, {transaction: tx}))
+                    })
+                    Promise.all(PromiseArray).then(function(ret){
+                        retData.data.list = ret;
+                        var flag = true;
+                        _.each(ret,function(it){
+                            console.log(it)
+                            if(!it){
+                                flag = false;
+                                tx.rollback(function(err) {
+                                    cb(null,{errid:-100,errmsg:err})
+                                });
+                            }
+                        })
+                        if(flag){
+                            tx.commit(function(err) {
+                                cb(null,{errid:1,errmsg:err,data:retData.data})
+                            });
+                        }
+                    }).catch(function(caterr){
+                        tx.rollback(function(err) {
+                                cb(null,{errid:1,errmsg:caterr})
+                        });
+                       
+                    })  
+                })
+                
+            })
+        });
     }
     
 };

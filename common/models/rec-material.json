@@ -395,6 +395,38 @@
         "nullable": "NO"
       },
       "_selectable": false
+    },
+    "validdate": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ValidDate",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "monthsale": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 18,
+      "scale": 2,
+      "mssql": {
+        "columnName": "MonthSale",
+        "dataType": "numeric",
+        "dataLength": null,
+        "dataPrecision": 18,
+        "dataScale": 3,
+        "nullable": "YES"
+      },
+      "_selectable": true
     }
   },
   "validations": [],

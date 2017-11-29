@@ -12,7 +12,6 @@
   "properties": {
     "formdate": {
       "type": "Date",
-      "id":true,
       "required": false,
       "length": null,
       "precision": null,
@@ -29,7 +28,8 @@
     },
     "formno": {
       "type": "String",
-      "required": true,
+      "id":true,
+      "required": false,
       "length": 50,
       "precision": null,
       "scale": null,

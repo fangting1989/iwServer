@@ -20,84 +20,28 @@
     "public": false
   },
   "dbhelper": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": false
   },
   "basemodel": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": false
   },
   "smshelper": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": true
   },
   "channel": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": false
   },
   "User": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": true
   },
   "Statistical": {
-    "dataSource": "mysql",
+    "dataSource": "mssql",
     "public": true
-  },
-  "TModule": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TModuletype": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TRolemodule": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TRole": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TUser": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TUserrole": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TMember": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TProd": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TImgs": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TNews": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TWechatcallback": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TMembill": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TBillcomment": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "TSmsmessage": {
-    "dataSource": "mysql",
-    "public": false
   },
   "RecGetintgoods": {
     "dataSource": "mssql",
