@@ -3,20 +3,14 @@
     "name": "db",
     "connector": "memory"
   },
-  "newDatasource": {
-    "password": "123456",
-    "name": "newDatasource",
-    "user": "root",
-    "connector": "mysql"
-  },
   "mssql": {
     "host": "localhost",
     "port": 1433,
-    "url": "mssql://MILKTEA_MAIN:MILKTEA_MAIN@localhost/MILKTEA_MAIN",
+    "url": "mssql://MILKTEA_MAIN_2:MILKTEA_MAIN@localhost/MILKTEA_MAIN",
     "database": "MILKTEA_MAIN",
     "password": "MILKTEA_MAIN",
     "name": "mssql",
-    "user": "MILKTEA_MAIN",
+    "user": "MILKTEA_MAIN_2",
     "connector": "mssql"
   }
 }

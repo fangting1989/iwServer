@@ -9,6 +9,7 @@ module.exports = function(Recclientindentmain) {
     var sql = require('mssql');
     var Promise = require('bluebird')
 
+    //创建订单
     Recclientindentmain.remoteMethod(
         'CreateOrder',
         {
@@ -128,6 +129,49 @@ module.exports = function(Recclientindentmain) {
         }
         else{
             cb(null,{errid:1,errmsg:'成功',data:data[0]})
+        }
+       }
+     });
+    }
+
+    //根据名称、开始时间、结束时间删选内容
+    Recclientindentmain.remoteMethod(
+        'orderlist',
+        {
+            http: { verb: 'post' },
+            description: '请求列表',
+            accepts: { arg: 'data', type: 'object', description: '{formstate:"7",startdate:"2010-01-01",enddate:"2012-01-01"}', root: true },
+            returns: { arg: 'data', type: 'object', root: true }
+        }
+    );
+
+    Recclientindentmain.orderlist = function (Data, cb) { 
+        console.log(Data)
+        Data = typeof Data == 'undefined' ? {}:Data
+        //获得当前订单详细情况 
+        var mssql = "";
+        mssql += "SELECT * FROM REC_CLIENTINDENT_MAIN WHERE FormState = 7 "
+        if(Data.startdate){
+            mssql += " and FormDate >= '"+Data.startdate+"'"
+        }
+        if(Data.enddate){
+            mssql += "  AND CONVERT(varchar,FormDate,23) <=  '"+Data.enddate+"' "
+        }
+        if(Data.searchtext){
+            mssql += " and EXISTS(SELECT 1 FROM REC_CLIENTINDENT A,REC_MATERIAL B WHERE A.MtCode = B.MTCode AND B.MTName LIKE '%"+Data.searchtext+"%' and A.FormNo = REC_CLIENTINDENT_MAIN.FormNo)"
+        }
+        mssql + " ORDER BY formdate DESC "
+        console.log(mssql)
+        Recclientindentmain.dataSource.connector.execute(mssql, null,function(err,data){
+        if(err){
+            cb(null,{errid:"-100",errmsg:err})
+        }
+        else{
+        if(data.length <= 0){
+            cb(null,{errid:"-100",errmsg:"找不到数据"})
+        }
+        else{
+            cb(null,{errid:1,errmsg:'成功',data:data})
         }
        }
      });
